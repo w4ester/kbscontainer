@@ -82,7 +82,7 @@
             
             const password = document.getElementById('password').value;
             const passwordHash = await sha256(password);
-            const correctPasswordHash = '0fd6f23b756ace20b1b1b85d9c8c42775a55ee8ddbb5eb0e20d404e664a6cb99';
+            const correctPasswordHash = 'c32374ddf9ebeea9caf1ae70479e2673da51b2cd1ae44fb563226bedc5bd8dd8';
             
             if (passwordHash === correctPasswordHash) {
                 sessionStorage.setItem('authenticated', 'true');
