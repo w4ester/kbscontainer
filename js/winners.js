@@ -52,7 +52,7 @@ const createWinnersContent = () => {
     <div class="container">
       <div class="winners-header">
         <h2 class="section-title">Award Winners</h2>
-        <p class="section-subtitle">Celebrating excellence in cybersecurity user experience design</p>
+        <p class="section-subtitle">The Cyber UXcellence Awards celebrate teams creating intuitive, user-friendly and effective security products.</p>
       </div>
       
       <div class="winners-grid">
