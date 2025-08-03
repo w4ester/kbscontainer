@@ -1,0 +1,242 @@
+/* 
+ * Cyber UXcellence Awards - About Section Styles
+ */
+
+.about-section {
+  background: linear-gradient(
+    105deg,
+    var(--mg-light-purple) 0%,
+    #c3b3f6 22%,
+    var(--white) 49%,
+    #c3b3f6 78%,
+    var(--mg-light-purple) 100%
+  );
+  padding: var(--spacing-xxl) 0 0 0; /* Remove bottom padding */
+  color: #363058;
+}
+
+.about-section .section-title {
+  text-align: left;
+  margin-bottom: var(--spacing-lg);
+  color: #363058;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.about-text {
+  width: 100%;
+  font-size: 1.05rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: #363058;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  color: #363058;
+  font-weight: 500;
+}
+
+.about-features {
+  margin-top: var(--spacing-lg);
+}
+
+.feature-item {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: flex-start;
+}
+
+.feature-item:before {
+  content: '✓';
+  color: var(--mg-red);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.feature-text h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xs);
+  color: #363058;
+  display: inline;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  color: #363058;
+  display: inline;
+  margin-left: 8px;
+}
+
+.mindgrub-creators {
+  margin-top: var(--spacing-lg);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #363058;
+}
+
+.mindgrub-highlight {
+  color: var(--mg-red);
+  font-weight: 600;
+}
+
+/* CEO Quote Section */
+.ceo-quote-container {
+  margin-top: var(--spacing-xl);
+  padding: 0;
+  background: linear-gradient(to right, #C3261D, #F47114);
+  color: var(--white);
+}
+
+.quote-sidebar {
+  font-size: 9rem;
+  font-family: Georgia, serif;
+  line-height: 0;
+  color: rgba(255, 255, 255, 0.25);
+  position: absolute;
+  top: 40px;
+  left: -60px;
+}
+
+.ceo-quote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: var(--spacing-xl) 0;
+  position: relative;
+}
+
+.quote-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 0 30px 0;
+}
+
+.ceo-quote:before {
+  content: none;
+}
+
+.quote-content {
+  flex: 3;
+  padding-right: var(--spacing-lg);
+  position: relative;
+  padding-left: 120px;
+  padding-top: 40px;
+}
+
+.quote-text-container {
+  position: relative;
+}
+
+.quote-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  font-weight: 300;
+}
+
+.quote-attribution {
+  font-weight: 600;
+  margin-top: var(--spacing-md);
+  text-align: right;
+  opacity: 0.95;
+  font-size: 1.1rem;
+}
+
+.ceo-image {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ceo-image img {
+  border-radius: var(--border-radius-lg);
+  max-width: 100%;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .ceo-quote {
+    flex-direction: column-reverse;
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .quote-sidebar {
+    font-size: 8rem;
+    top: 40px;
+    left: -50px;
+  }
+  
+  .quote-content {
+    padding-right: 20px;
+    padding-top: var(--spacing-lg);
+    padding-left: 80px;
+  }
+  
+  .ceo-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .ceo-image img {
+    max-width: 280px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: var(--spacing-xl) 0 0 0;
+  }
+  
+  .about-section .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .feature-item:before {
+    font-size: 1rem;
+  }
+  
+  .feature-text h3,
+  .feature-text p {
+    font-size: 0.95rem;
+  }
+  
+  .quote-sidebar {
+    font-size: 7rem;
+    top: 40px;
+    left: -45px;
+  }
+  
+  .quote-content {
+    padding-left: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .quote-sidebar {
+    font-size: 6rem;
+    top: 40px;
+    left: -35px;
+  }
+  
+  .quote-content {
+    padding-left: 40px;
+  }
+}

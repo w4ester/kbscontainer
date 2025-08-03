@@ -1,0 +1,218 @@
+/* 
+ * Cyber UXcellence Awards - Timeline Section Styles
+ */
+
+.timeline-section {
+  background-color: var(--mg-dark-purple);
+  color: var(--white);
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+}
+
+/* Add dot pattern to timeline background */
+.timeline-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  z-index: 0;
+}
+
+.timeline-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-section .section-header {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.timeline-section .section-header h2 {
+  text-align: left;
+  margin-bottom: var(--spacing-lg);
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: var(--spacing-xl);
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-xxl);
+  width: 100%;
+  display: flex;
+}
+
+.timeline-item-left {
+  justify-content: flex-start;
+}
+
+.timeline-item-right {
+  justify-content: flex-end;
+}
+
+.timeline-content {
+  position: relative;
+  width: 45%;
+  box-sizing: border-box;
+}
+
+.timeline-card {
+  background-color: white;
+  color: var(--mg-nearly-black);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal);
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-date {
+  display: inline-block;
+  background-color: var(--mg-red);
+  color: var(--white);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: var(--border-radius-pill);
+  margin-bottom: var(--spacing-md);
+  font-size: 1rem;
+}
+
+.timeline-section .timeline-card h3.timeline-title {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--mg-dark-purple) !important; /* Override global.css rule */
+  font-weight: bold;
+}
+
+.timeline-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--mg-red);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  border: 3px solid white;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .timeline-item {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .timeline-item-left,
+  .timeline-item-right {
+    justify-content: flex-start;
+  }
+  
+  .timeline-content {
+    width: 80%;
+    margin-left: 60px;
+  }
+  
+  .timeline-line {
+    left: 30px;
+    transform: none;
+  }
+  
+  .timeline-marker {
+    left: 30px;
+    top: 50%; 
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .timeline-section .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  /* Position the timeline line to align with navbar logo */
+  .timeline-line {
+    left: 15px; /* Align with navbar logo */
+    transform: none;
+    width: 2px; /* Slightly thinner on mobile */
+  }
+  
+  /* Align dots correctly on the line */
+  .timeline-marker {
+    left: 15px; /* Align with navbar logo */
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    top: 40px; /* Position dot at optimal location relative to card */
+    transform: translateX(-4px); /* Center the dot on the line */
+  }
+  
+  .timeline-content {
+    width: calc(100% - 40px);
+    margin-left: 30px; /* Give some space between the line and content */
+  }
+  
+  .timeline-card {
+    padding: var(--spacing-md);
+  }
+  
+  /* Ensure proper vertical alignment */
+  .timeline-item {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-left: 15px; /* Ensure padding aligns with navbar logo */
+  }
+}
+
+@media (max-width: 576px) {
+  .timeline-section .section-header h2 {
+    font-size: 2.5rem; /* Keep consistent with other sections */
+  }
+  
+  .timeline-line {
+    left: 15px; /* Align with navbar logo */
+  }
+  
+  .timeline-marker {
+    left: 15px; /* Align with navbar logo */
+    transform: translateX(-4px); /* Center the dot on the line */
+  }
+}

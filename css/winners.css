@@ -1,0 +1,497 @@
+/**
+ * Cyber UXcellence Awards - Winners Page Styles
+ * Contains styles for the winners page and winner display components
+ */
+
+/* Winners Notification Banner */
+.winners-notification-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(44, 33, 90, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--mg-orange);
+  border-radius: 0;
+  padding: 1rem 0;
+  z-index: 10;
+  width: 100%;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(244, 113, 20, 0.2);
+}
+
+.winners-notification-bar .notification-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.winners-notification-bar .notification-text {
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Winners Header Section */
+.winners-header {
+  background: linear-gradient(135deg, var(--mg-dark-purple) 0%, var(--mg-nearly-black) 100%);
+  padding: var(--section-pad) 0;
+  text-align: center;
+  color: var(--white);
+  padding-top: calc(var(--section-pad) + var(--nav-height) + 60px); /* Account for fixed navbar + banner */
+  position: relative;
+  overflow: hidden;
+}
+
+.winners-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(175, 146, 248, 0.1) 0%, transparent 50%);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  pointer-events: none;
+}
+
+.winners-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.winners-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--mg-orange), var(--mg-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.winners-header p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.announced-at {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trophy-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%) invert(66%) sepia(89%) saturate(3571%) hue-rotate(346deg) brightness(103%) contrast(89%);
+}
+
+.announced-at span {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Winners Content Section */
+.winners-content {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+
+/* Coming Soon Section */
+.winners-coming-soon {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.coming-soon-content h2 {
+  color: var(--mg-dark-purple);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.coming-soon-content p {
+  color: var(--mg-nearly-black);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.categories-list li {
+  color: var(--mg-dark-purple);
+  font-size: 1.375rem;
+  font-weight: 500;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.category-icon {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: contain;
+}
+
+.category-name {
+  margin-left: 48px;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.categories-list li:last-child {
+  border-bottom: none;
+}
+
+.social-follow {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.social-follow p {
+  color: var(--mg-nearly-black);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background: var(--mg-dark-purple);
+  color: var(--white);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--mg-dark-purple);
+  border-radius: var(--border-radius-pill);
+}
+
+.social-link:hover {
+  background: var(--mg-dark-purple);
+  color: var(--white);
+  opacity: 1;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Winners Grid (for when winners are announced) */
+.winners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.winner-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid #e0e0e0;
+  transition: all var(--transition-normal);
+}
+
+.winner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.winner-card.best-overall {
+  border-left: 4px solid var(--mg-orange);
+}
+
+.winner-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.winner-info h3 {
+  color: var(--mg-dark-purple);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.winner-name {
+  color: var(--mg-nearly-black);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.winner-company {
+  color: var(--mg-orange);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.winner-description {
+  color: var(--mg-nearly-black);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Navigation Active State */
+.nav-links a.active {
+  color: var(--mg-orange);
+  font-weight: 600;
+}
+
+.mobile-links a.active {
+  color: var(--mg-orange);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .winners-notification-bar {
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .winners-notification-bar .notification-text {
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+  
+  .winners-header {
+    padding: calc(var(--section-pad) * 0.7) 0;
+    padding-top: calc(var(--section-pad) + var(--nav-height) + 50px); /* Account for fixed navbar + banner on mobile */
+  }
+  
+  .winners-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .winners-header p {
+    font-size: 1.125rem;
+  }
+  
+  .announced-at {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .coming-soon-content h2 {
+    font-size: 2rem;
+  }
+  
+  .categories-list li {
+    font-size: 1.125rem;
+    padding: 1rem 0;
+  }
+  
+  .category-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .category-name {
+    margin-left: 40px;
+  }
+  
+  .winners-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .winner-card {
+    padding: 1.5rem;
+  }
+  
+  .winner-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .social-link {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .winners-notification-bar .notification-text {
+    font-size: 0.8rem;
+  }
+}
+}
+
+/* Winner Category Cards */
+.winner-category-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.winner-category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(244, 113, 20, 0.15);
+  border-color: rgba(244, 113, 20, 0.3);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-header h3 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Logo Sizing */
+.company-logo,
+.finalist-logo {
+  max-width: 120px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.winner-section {
+  margin-bottom: 2rem;
+}
+
+.winner-badge {
+  background: linear-gradient(135deg, var(--mg-orange), #ff6b35);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.company-info {
+  margin-top: 1rem;
+}
+
+.company-link,
+.finalist-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--white);
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.company-link:hover,
+.finalist-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.company-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.finalists-section h4 {
+  color: var(--mg-orange);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.finalists-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.finalist-link span {
+  font-size: 1rem;
+}
+
+.special-mention {
+  background: rgba(244, 113, 20, 0.1);
+  border: 1px solid var(--mg-orange);
+  color: var(--mg-orange);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .company-logo,
+  .finalist-logo {
+    max-width: 80px;
+    max-height: 40px;
+  }
+  
+  .winner-category-card {
+    padding: 1.5rem;
+  }
+  
+  .category-header h3 {
+    font-size: 1.25rem;
+  }
+}

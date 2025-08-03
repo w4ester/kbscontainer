@@ -1,0 +1,219 @@
+/* 
+ * Cyber UXcellence Awards - Footer Styles
+ */
+
+footer {
+  background-color: #1e1a21; /* Slightly brighter than --mg-nearly-black to match image */
+  color: var(--white);
+  padding: var(--spacing-lg) 0 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stars in the background - smaller, more sparse dots to match image */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: 0 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.footer-main-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-lg) var(--container-padding);
+}
+
+.footer-content-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.powered-by-text {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--white);
+}
+
+.mindgrub-logo-link {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.mindgrub-footer-logo {
+  width: 200px;
+  height: auto;
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--spacing-md);
+}
+
+.visit-mindgrub {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #d03d33, #e56939, #f7933a);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: box-shadow var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(208, 61, 51, 0.25);
+  white-space: nowrap;
+}
+
+.visit-mindgrub:hover {
+  box-shadow: 0 6px 15px rgba(208, 61, 51, 0.4);
+  color: var(--white);
+}
+
+.footer-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left align all content */
+}
+
+.footer-awards-logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  white-space: nowrap; /* Prevent wrapping */
+  line-height: 40px; /* Set a fixed line height for consistent baseline */
+}
+
+.follow-us-text {
+  font-size: 1.4rem;
+  color: var(--white);
+  font-weight: 400;
+  margin-right: 12px; /* Add spacing between text and icon */
+  display: inline-block; /* Ensure text behaves like inline element */
+  vertical-align: middle; /* Perfect baseline alignment */
+  line-height: 40px; /* Match line height */
+  position: relative;
+  top: 2px; /* Push text down slightly to align baseline */
+}
+
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast);
+  height: 40px; /* Set height to match line height */
+}
+
+.social-icon-link:hover {
+  opacity: 0.8;
+}
+
+.linkedin-icon {
+  width: 32px; /* Slightly smaller icon for better alignment */
+  height: 32px; /* Slightly smaller icon for better alignment */
+  vertical-align: middle; /* Perfect baseline alignment */
+  display: inline-block; /* Keep on same line */
+  position: relative;
+  top: -2px; /* Fine-tune vertical alignment */
+}
+
+.copyright-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: var(--spacing-sm) 0;
+  margin-top: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.copyright a {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: var(--spacing-md);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.copyright a:hover {
+  color: var(--white);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .footer-main-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-xl);
+  }
+  
+  .footer-content-left {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-content-right {
+    align-items: center; /* Center align on mobile */
+  }
+  
+  .footer-description {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Ensure the Visit Mindgrub button has good hover effects on all screens */
+  .visit-mindgrub:hover {
+    box-shadow: 0 6px 15px rgba(208, 61, 51, 0.4);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-description br {
+    display: none;
+  }
+  
+  .copyright span {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .copyright a {
+    margin-left: var(--spacing-sm);
+    margin-right: var(--spacing-sm);
+  }
+  
+  /* Enhance mobile button effects */
+  .visit-mindgrub {
+    width: 80%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}

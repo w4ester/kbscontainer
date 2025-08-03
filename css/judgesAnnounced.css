@@ -1,0 +1,186 @@
+/* 
+ * Cyber UXcellence Awards - Judges Section Styles
+ */
+
+.judges-section {
+  background: #121118; /* Nearly black with a slight purple tint */
+  color: var(--white);
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.judges-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.judges-section .section-title {
+  text-align: left;
+  margin-bottom: var(--spacing-sm);
+  font-size: 2.5rem;
+  color: #FFFFFF; /* Pure white for section title */
+}
+
+.judges-section .section-subtitle {
+  text-align: left;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 0 var(--spacing-xl) 0;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for subtitle */
+}
+
+.judges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.judge-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100%;
+}
+
+.judge-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(175, 146, 248, 0.2);
+}
+
+.judge-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto var(--spacing-md);
+  border: 3px solid rgba(175, 146, 248, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.judge-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  image-rendering: -webkit-optimize-contrast; /* Improves image crispness in Chrome/Safari */
+  image-rendering: crisp-edges; /* Improves image crispness in Firefox */
+}
+
+.judge-name {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+  color: #FFFFFF !important; /* Force pure white for judge names */
+}
+
+.judge-title {
+  font-size: 1rem;
+  color: var(--mg-light-purple);
+  margin-bottom: var(--spacing-md);
+  font-weight: 500;
+}
+
+.judge-description {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.announcement-card {
+  background-color: rgba(175, 146, 248, 0.15);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  height: 100%;
+  border: 1px solid rgba(175, 146, 248, 0.2);
+}
+
+.announcement-card:hover {
+  background-color: rgba(175, 146, 248, 0.2);
+}
+
+.announcement-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.announcement-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: #FFFFFF !important; /* Force pure white for announcement card heading */
+}
+
+.announcement-card p {
+  margin-bottom: var(--spacing-md);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.announcement-card .cta-button {
+  margin-top: auto;
+}
+
+.announcement-date {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--mg-dark-purple);
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: var(--border-radius-pill);
+  margin-top: var(--spacing-md);
+  font-size: 1.1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .judges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .judges-grid {
+    gap: var(--spacing-lg);
+  }
+  
+  .judge-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .judges-section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .judges-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .judges-section .section-title {
+    font-size: 2rem;
+  }
+  
+  .judge-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}

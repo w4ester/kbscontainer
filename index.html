@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber UXcellence Awards - Recognizing Excellence in Cybersecurity Product User Experience</title>
+    <meta name="description" content="The Cyber UXcellence Awards celebrate teams creating intuitive, user-friendly and effective security products.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon_io/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/winners-home.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="css/why.css">
+    <link rel="stylesheet" href="css/judges-popup.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/sponsorship.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <!-- HubSpot Form Script loaded directly in the modal -->
+</head>
+<body>
+    <script>
+        // Check if user is authenticated
+        if (sessionStorage.getItem('authenticated') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <!-- Navigation -->
+    <header>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-wrapper">
+                            <span class="logo-text">
+                                <span class="logo-cyber">CYBER</span>
+                                <span class="logo-uxcellence">UXCELLENCE</span>
+                                <span class="logo-awards">AWARDS</span>
+                            </span>
+                            <span class="powered-by">Powered by Mindgrub</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#winners">WINNERS</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#judges">JUDGES</a>
+                    <a href="#why-nominate">WHY NOMINATE</a>
+                    <!-- <a href="#categories">CATEGORIES</a> -->
+                    <!-- <a href="#timeline">TIMELINE</a> -->
+                    <!-- <a href="#faq">FAQ</a> -->
+                    <!-- <a href="/blog.html">BLOG</a> -->
+                    <a href="#sponsorship">SPONSORSHIP</a>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="container">
+                <div class="close-menu">&times;</div>
+                <div class="mobile-links">
+                    <a href="#winners">WINNERS</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#judges">JUDGES</a>
+                    <a href="#why-nominate">WHY NOMINATE</a>
+                    <!-- <a href="#categories">CATEGORIES</a> -->
+                    <!-- <a href="#timeline">TIMELINE</a> -->
+                    <!-- <a href="#faq">FAQ</a> -->
+                    <!-- <a href="/blog.html">BLOG</a> -->
+                    <a href="#sponsorship">SPONSORSHIP</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section"></section>
+        
+        <!-- Winners Section - NEW -->
+        <section id="winners" class="winners-section"></section>
+        
+        <!-- About Section -->
+        <section id="about" class="about-section"></section>
+        
+        <!-- Judges Section -->
+        <section id="judges"></section>
+        
+        <!-- Judge Interest Section - NEW -->
+        <section id="judge-interest" class="judge-interest-section"></section>
+        
+        <!-- Why Nominate Section -->
+        <section id="why-nominate"></section>
+        
+        <!-- Sponsorship Section - KEEP for event -->
+        <section id="sponsorship"></section>
+        
+        <!-- COMMENTED OUT SECTIONS -->
+        <!-- <section id="categories" class="no-spacing-before"></section> -->
+        <!-- <section id="timeline"></section> -->
+        <!-- <section id="faq"></section> -->
+    </main>
+
+    <footer>
+        <!-- Footer content is dynamically added by initFooter() in main.js -->
+    </footer>
+    
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <div class="cookie-buttons">
+                <button id="cookieAccept" class="cookie-accept">Accept</button>
+                <button id="cookieDecline" class="cookie-decline">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nomination Modal -->
+    <div class="nomination-modal" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Nominations Closed</h2>
+                <button type="button" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="nominations-closed-message">
+                    <h3>Nominations for 2025 Are Now Closed</h3>
+                    <p>Thank you for your interest in the Cyber UXcellence Awards! The nomination period has ended as of July 10, 2025.</p>
+                    <p><strong>Stay tuned for the Winners announcement at Black Hat USA 2025!</strong></p>
+                    <p>Follow us on <a href="https://www.linkedin.com/showcase/cyber-uxcellence/" target="_blank">LinkedIn</a> for the latest updates.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js" type="module"></script>
+    
+    <!-- Inline script for popup close functionality -->
+    <script>
+        // Close nomination modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.querySelector('.nomination-modal');
+            const modalClose = document.querySelector('.modal-close');
+            const modalOverlay = document.querySelector('.modal-overlay');
+            
+            // Function to close modal
+            function closeModal() {
+                if (modal) {
+                    modal.style.display = 'none';
+                }
+            }
+            
+            // Close on X button click
+            if (modalClose) {
+                modalClose.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeModal();
+                });
+            }
+            
+            // Close on overlay click
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', closeModal);
+            }
+            
+            // Close on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal && modal.style.display !== 'none') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

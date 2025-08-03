@@ -1,0 +1,108 @@
+/* 
+ * Cyber UXcellence Awards - Why Nominate Section Styles
+ */
+
+.why-nominate-section {
+  background: linear-gradient(
+    105deg,
+    var(--mg-light-purple) 0%,
+    #c3b3f6 22%,
+    var(--white) 49%,
+    #c3b3f6 78%,
+    var(--mg-light-purple) 100%
+  );
+  padding: var(--spacing-xxl) 0;
+  color: var(--mg-dark-purple);
+}
+
+.why-nominate-section .section-title {
+  color: var(--mg-dark-purple);
+  text-align: left;
+  font-size: 3rem;
+  margin-bottom: var(--spacing-lg);
+  font-weight: 700;
+}
+
+.why-nominate-section .section-subtitle {
+  text-align: left;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 0 var(--spacing-xl) 0;
+  line-height: 1.5;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl) var(--spacing-xxl);
+  margin-top: var(--spacing-xl);
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.benefit-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.benefit-icon img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(43%) sepia(82%) saturate(2695%) hue-rotate(338deg) brightness(100%) contrast(93%);
+}
+
+.benefit-content h3 {
+  color: var(--mg-dark-purple);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.benefit-content p {
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .why-nominate-section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .why-nominate-section .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .benefit-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .benefit-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .benefit-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefit-item {
+    gap: var(--spacing-sm);
+  }
+}

@@ -1,0 +1,95 @@
+/* 
+ * Cyber UXcellence Awards - Sponsorship Section Styles
+ */
+
+.sponsorship-section {
+  background: linear-gradient(to right, #d03d33, #e56939, #f7933a);
+  padding: var(--spacing-xl) 0;
+  color: var(--white);
+  text-align: center;
+}
+
+.sponsorship-banner {
+  background: linear-gradient(to right, #d03d33, #e56939, #f7933a);
+  padding: var(--spacing-xl) 0;
+  color: var(--white);
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+.sponsorship-section .container,
+.sponsorship-banner .container {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsorship-section h2,
+.sponsorship-banner h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--white);
+}
+
+.sponsorship-section p,
+.sponsorship-banner p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.sponsorship-section .cta-button,
+.sponsorship-banner .cta-button {
+  background-color: #DC143C;
+  color: var(--white);
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all var(--transition-fast);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+}
+
+.sponsorship-section .cta-button:hover,
+.sponsorship-banner .cta-button:hover {
+  background-color: #B91C3C;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sponsorship-section,
+  .sponsorship-banner {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .sponsorship-section h2,
+  .sponsorship-banner h2 {
+    font-size: 2rem;
+  }
+  
+  .sponsorship-section p,
+  .sponsorship-banner p {
+    font-size: 1rem;
+    padding: 0 var(--spacing-md);
+  }
+  
+  /* Ensure consistent button styling on mobile */
+  .sponsorship-section .cta-button,
+  .sponsorship-banner .cta-button {
+    width: 80%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}

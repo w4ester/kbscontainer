@@ -1,0 +1,15 @@
+<!-- assets/images/icons/panel-icon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 48 32" fill="none"
+     stroke="#c4b4ff" stroke-width="3"
+     stroke-linecap="round" stroke-linejoin="round">
+  <!-- front person -->
+  <circle cx="24" cy="10" r="6"/>
+  <path d="M14 29c0-6 4-10 10-10s10 4 10 10"/>
+  <!-- left person -->
+  <circle cx="10" cy="12" r="5"/>
+  <path d="M2 29c0-5 3-9 8-9"/>
+  <!-- right person -->
+  <circle cx="38" cy="12" r="5"/>
+  <path d="M46 29c0-5-3-9-8-9"/>
+</svg>

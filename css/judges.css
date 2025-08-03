@@ -1,0 +1,137 @@
+/* 
+ * Cyber UXcellence Awards - Judges Section Styles (Placeholder Version)
+ * Styling for the judges announcement section
+ */
+
+.judges-section {
+  background: #D84C2E; /* Orange-red background color as shown in the image */
+  background: linear-gradient(145deg, #D84C2E 0%, #C43727 100%); /* Gradient effect */
+  color: var(--white);
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.judges-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.judges-section .section-title {
+  text-align: left;
+  margin-bottom: var(--spacing-lg);
+  font-size: 3rem;
+  color: #FFFFFF; /* Pure white for section title */
+  font-weight: 700;
+}
+
+/* Judges announcement container */
+.judges-announcement-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Announcement card styling */
+.announcement-card {
+  background-color: #231C51; /* Dark purple background for cards */
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  text-align: left;
+  flex: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.announcement-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon styling */
+.announcement-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+}
+
+.announcement-icon-img {
+  width: 100%;
+  height: auto;
+  /* Light Purple Color from Design System */
+  fill: #AF92F8;
+  stroke: #AF92F8;
+  color: #AF92F8;
+}
+
+/* Attempt to force SVG to use light purple color */
+.announcement-icon-img path,
+.announcement-icon-img circle,
+.announcement-icon-img rect,
+.announcement-icon-img line,
+.announcement-icon-img polygon {
+  fill: #AF92F8;
+  stroke: #AF92F8;
+}
+
+/* SVG direct color override */
+svg.announcement-icon-img {
+  fill: #AF92F8;
+  stroke: #AF92F8;
+  color: #AF92F8;
+}
+
+/* Announcement title styling */
+.announcement-title {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+  color: #FFFFFF !important; /* Force pure white for titles */
+}
+
+/* Announcement description styling */
+.announcement-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .judges-section .section-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .judges-announcement-container {
+    flex-direction: column;
+  }
+  
+  .judges-section .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .announcement-card {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* For very small mobile screens */
+@media (max-width: 576px) {
+  .judges-section .section-title {
+    font-size: 2.5rem; /* Keep consistent with other sections */
+  }
+}
+
+/* Hidden judges grid for future use */
+.judges-grid {
+  display: none; /* Hidden by default until ready to reveal */
+}

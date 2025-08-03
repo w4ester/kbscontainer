@@ -1,0 +1,706 @@
+/* 
+ * Cyber UXcellence Awards - Judges Section with Popup Styles
+ */
+
+/* Light gray background version */
+.judges-section {
+  background: #f5f5fa; /* Very light purple/gray background from screenshot */
+  color: #333;
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.judges-section .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Section header using standard container alignment */
+.judges-section .section-header {
+  text-align: left;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  padding: 0 var(--container-padding); /* Use standard container padding */
+}
+
+.judges-section .section-header h2 {
+  color: var(--mg-dark-purple);
+  text-align: left;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.judges-section .section-subtitle {
+  text-align: left;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 0 var(--spacing-xl) 0;
+  opacity: 0.9;
+  color: #555; /* Dark text for subtitle */
+}
+
+/* Judges grid layout */
+.judges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: var(--spacing-md);
+  width: 100%;
+  grid-template-rows: auto auto auto;
+}
+
+.judge-card {
+  background-color: transparent;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left-align all content */
+  justify-self: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  max-width: 220px; /* Increase max-width for desktop */
+  height: auto;
+}
+
+/* Position specific judges in the grid */
+.judges-grid .judge-card:nth-child(1),
+.judges-grid .judge-card:nth-child(2),
+.judges-grid .judge-card:nth-child(3),
+.judges-grid .judge-card:nth-child(4) {
+  grid-row: 1;
+}
+
+.judges-grid .judge-card:nth-child(5),
+.judges-grid .judge-card:nth-child(6),
+.judges-grid .judge-card:nth-child(7),
+.judges-grid .judge-card:nth-child(8) {
+  grid-row: 2;
+}
+
+.judges-grid .judge-card:nth-child(9),
+.judges-grid .judge-card:nth-child(10),
+.judges-grid .judge-card:nth-child(11) {
+  grid-row: 3;
+}
+
+/* Center and spread the last row evenly (Peter, Alicia, Meagan) */
+.judges-grid .judge-card:nth-child(9),
+.judges-grid .judge-card:nth-child(10),
+.judges-grid .judge-card:nth-child(11) {
+  justify-self: center;
+}
+
+/* Position the last row with even spacing */
+.judges-grid .judge-card:nth-child(9) {
+  grid-column: 1/3;
+}
+
+.judges-grid .judge-card:nth-child(10) {
+  grid-column: 2/4;
+}
+
+.judges-grid .judge-card:nth-child(11) {
+  grid-column: 3/5;
+}
+
+/* Removed hover animation for user comfort */
+.judge-card:hover {
+  /* No animation */
+}
+
+/* Judge info container styling */
+.judge-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.judge-image {
+  width: 100%;
+  max-width: 220px; /* Increase max-width for desktop */
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 20px; /* More rounded corners */
+  margin: 0 0 var(--spacing-sm) 0; /* Remove auto margins to align left */
+  position: relative;
+  overflow: hidden;
+}
+
+.judge-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Use cover for consistent image display */
+  object-position: center 25%; /* Position to focus on the face */
+  border-radius: 20px; /* Match container border radius */
+  /* Performance optimizations */
+  transform: translateZ(0); /* Hardware acceleration */
+  backface-visibility: hidden; /* Reduce composite layers */
+  -webkit-font-smoothing: antialiased; /* Smoother edges */
+  image-rendering: -webkit-optimize-contrast; /* Chrome/Safari */
+  image-rendering: crisp-edges; /* Firefox */
+  loading: lazy;
+}
+
+.judge-name {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333 !important; /* Dark text for judge names */
+  width: 100%;
+  text-align: left;
+}
+
+.judge-title {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 6px;
+  font-weight: 400;
+  line-height: 1.3;
+  width: 100%;
+  max-height: 2.6em; /* Limit to 2 lines of text */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Judge location styling */
+.judge-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: left;
+  line-height: 1.3;
+  width: 100%;
+  min-height: 48px; /* Increased height to accommodate 3 lines of text */
+}
+
+.judge-location img {
+  width: 14px;
+  height: 14px;
+  margin-top: 3px; /* Align icon with text */
+  flex-shrink: 0;
+}
+
+.judge-location span {
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show up to 3 lines of text instead of 2 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Read Bio button */
+.read-bio {
+  display: inline-block;
+  background-color: white;
+  color: #333;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  margin-top: 0;
+  border: 1px solid #D12C31; /* Red outline from brand guide */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start; /* Align to the left */
+  min-width: 60px;
+  font-weight: 400;
+}
+
+.read-bio:hover {
+  background-color: rgba(209, 44, 49, 0.05); /* Light red hover effect */
+}
+
+/* Judge Bio Popup Styles */
+.judge-bio-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px 10px; /* Horizontal padding reduced for mobile */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.judge-bio-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.judge-bio-popup {
+  background-color: white;
+  border-radius: 12px; /* Slightly more rounded corners */
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s ease;
+  transform: scale(0.95);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  /* Ensure popup stays on screen on all devices */
+  margin: 0 10px;
+}
+
+.judge-bio-overlay.active .judge-bio-popup {
+  transform: scale(1);
+}
+
+.judge-bio-image {
+  width: 200px; /* Wider image container */
+  flex-shrink: 0; /* Prevent shrinking */
+  position: relative;
+  min-height: 300px; /* Taller to match the mockup proportions */
+  max-height: 300px;
+  overflow: hidden;
+  border-top-left-radius: 12px; /* Match the popup border radius */
+  border-bottom-left-radius: 12px;
+  background-color: #231F20; /* Brand guide nearly black background */
+  background-image: linear-gradient(45deg, #1a1618 25%, #231F20 25%, #231F20 50%, #1a1618 50%, #1a1618 75%, #231F20 75%, #231F20);
+  background-size: 20px 20px; /* Subtle pattern to indicate loading */
+}
+
+.judge-bio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover to fill the entire container */
+  object-position: center center; /* Center the image */
+  margin: 0;
+  padding: 0;
+  display: block;
+  border-top-left-radius: 12px; /* Match the popup border radius */
+  border-bottom-left-radius: 12px;
+  transition: opacity 0.3s ease-in-out; /* Smooth fade transition */
+}
+
+.judge-bio-content {
+  padding: 30px 35px; /* Slightly reduced horizontal padding */
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 300px; /* Match image height */
+}
+
+.judge-bio-name {
+  color: var(--mg-dark-purple); /* Purple from design system */
+  font-size: 1.5rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.judge-bio-title {
+  color: #000; /* Black for title */
+  font-size: 0.9rem;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+}
+
+.judge-bio-text {
+  color: #333; /* Dark gray for better readability */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 95%; /* Prevent text from extending too far */
+}
+
+.judge-bio-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.judge-bio-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.judge-bio-close:before,
+.judge-bio-close:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: #555;
+}
+
+.judge-bio-close:before {
+  transform: rotate(45deg);
+}
+
+.judge-bio-close:after {
+  transform: rotate(-45deg);
+}
+
+/* Responsive styles */
+@media (max-width: 1300px) {
+  .judges-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  /* Reset positioning for 3-column layout */
+  .judges-grid .judge-card:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* Large tablet styles */
+@media (max-width: 991px) and (min-width: 769px) {
+  .judges-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  /* Keep desktop-like layout but smaller */
+  .judge-bio-popup {
+    max-width: 650px;
+    overflow: hidden;
+    max-height: 85vh;
+  }
+
+  .judge-bio-image {
+    width: 150px;
+    min-height: 270px;
+  }
+
+  .judge-bio-content {
+    padding: 25px 30px;
+    max-height: 270px;
+  }
+}
+
+/* Small tablet styles */
+@media (max-width: 768px) and (min-width: 577px) {
+  .judges-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Switch to stacked layout for small tablets */
+  .judge-bio-popup {
+    flex-direction: column;
+    max-width: 500px;
+    overflow: hidden;
+    max-height: 85vh;
+    border-radius: 12px;
+  }
+
+  .judge-bio-image {
+    width: 100%;
+    height: 160px; /* Reduced height for tablet */
+    min-height: auto;
+    max-height: none;
+    border-radius: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: #231F20; /* Brand guide nearly black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .judge-bio-content {
+    padding: 25px;
+    max-height: calc(85vh - 160px); /* Adjusted for reduced image height */
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .judges-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  /* Maintain consistent padding for proper alignment */
+  .judges-section .section-header {
+    padding: 0 var(--container-padding);
+  }
+
+  .judges-section .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .judge-card {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: flex-start; /* Keep left alignment on tablet */
+    text-align: left;
+  }
+
+  .judge-image {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 0 var(--spacing-sm) 0; /* Remove auto margins to align left */
+  }
+
+  .judge-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Keep left alignment on tablet */
+  }
+
+  /* Reset specific positioning for tablet */
+  .judges-grid .judge-card:nth-child(n) {
+    grid-column: auto;
+  }
+
+  .judge-bio-name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .judges-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  /* Mobile styles - maintain container padding for proper alignment */
+  .judges-section .section-header {
+    padding: 0 var(--container-padding);
+  }
+
+  .judges-section .section-header h2 {
+    font-size: 2.25rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: var(--mg-dark-purple);
+  }
+
+  .judges-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 var(--container-padding);
+  }
+
+  .judge-card {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    /* Removed transition for user comfort */
+  }
+
+  /* Removed active state animation for user comfort */
+
+  .judge-image {
+    width: 80px;
+    height: 80px;
+    max-width: 80px;
+    min-width: 80px;
+    border-radius: 20px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  
+  .judge-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .judge-name {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .judge-location {
+    margin-bottom: 6px;
+    font-size: 0.75rem;
+    min-height: unset;
+    text-align: left;
+    -webkit-line-clamp: 3; /* Show up to 3 lines on mobile too */
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .judge-location img {
+    margin-top: 2px;
+    width: 13px;
+    height: 13px;
+  }
+
+  .read-bio {
+    margin-top: 5px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    align-self: flex-start;
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #D12C31; /* Red border from brand guide */
+    color: #333;
+    font-weight: 500;
+  }
+
+  .read-bio:active {
+    background-color: rgba(209, 44, 49, 0.1); /* Light red active effect */
+  }
+
+  /* Reset grid positioning for mobile */
+  .judges-grid .judge-card:nth-child(n) {
+    grid-column: auto;
+  }
+
+  /* Mobile popup styles */
+  .judge-bio-popup {
+    flex-direction: column;
+    max-width: 95%;
+    width: 95%;
+    height: auto;
+    max-height: 85vh;
+    border-radius: 12px;
+  }
+
+  .judge-bio-image {
+    width: 100%;
+    height: 140px; /* Significantly reduced height to show more bio content */
+    min-height: auto;
+    max-height: none;
+    border-radius: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: #231F20; /* Brand guide nearly black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .judge-bio-content {
+    padding: 20px;
+    max-height: calc(85vh - 140px); /* Adjusted for reduced image height */
+    overflow-y: auto;
+  }
+
+  .judge-bio-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .judge-bio-title {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .judge-bio-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Make the close button more visible and easier to tap */
+  .judge-bio-close {
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 20;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 400px) {
+  /* Even more compact popup for very small screens */
+  .judge-bio-popup {
+    max-width: 100%;
+    width: 100%;
+    max-height: 95vh;
+  }
+
+  .judge-bio-image {
+    height: 120px; /* Even smaller for the smallest screens */
+    min-height: auto;
+    border-radius: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: #231F20; /* Brand guide nearly black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .judge-bio-content {
+    padding: 15px;
+    max-height: calc(95vh - 120px); /* Adjusted for reduced image height */
+  }
+
+  .judge-bio-name {
+    font-size: 1.1rem;
+  }
+
+  .judge-bio-title, .judge-bio-text {
+    font-size: 0.85rem;
+  }
+
+  .judge-bio-name {
+    font-size: 1rem;
+  }
+
+  .judge-bio-title {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .judge-bio-text {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}

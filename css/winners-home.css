@@ -1,0 +1,303 @@
+/**
+ * Cyber UXcellence Awards - Winners Section for Home Page
+ * Design matching provided screenshot with award cards
+ */
+
+/* Winners Section */
+.winners-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Section Header */
+.winners-header {
+  text-align: left;
+  margin-bottom: 60px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.winners-header .section-title {
+  text-align: left;
+  margin-bottom: var(--spacing-lg);
+  color: #363058;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.winners-header .section-subtitle {
+  font-size: 1.2rem;
+  color: #363058;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Winners Grid */
+.winners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Winner Card - Matching screenshot design */
+.winner-card {
+  background: linear-gradient(135deg, #FF6B35 0%, #F4570A 50%, #DC143C 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+}
+
+.winner-card:hover {
+  /* Animation removed */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Background category icon - subtle watermark */
+.winner-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.08;
+  z-index: 0;
+  filter: brightness(0) invert(1);
+}
+
+/* Card Content */
+.card-top {
+  padding: 40px 30px 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+/* Award Logo */
+.award-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+  filter: brightness(0) invert(1); /* Make logo white */
+}
+
+/* Winner Label */
+.winner-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Company Info Section */
+.company-info {
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+  flex-grow: 1;
+  /* Remove visible box - fully transparent */
+  background: transparent;
+  margin: 0 20px;
+}
+
+.company-logo {
+  max-width: 180px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Make logos white for visibility on gradient */
+}
+
+.company-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Category Banner - Bottom of card */
+.category-banner {
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  margin-top: auto;
+  z-index: 1;
+}
+
+.category-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.winner-card .category-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white !important; /* White color for second line - override categories.css */
+}
+
+/* Category-specific background icons */
+.winner-card[data-category="best-overall"]::before {
+  background-image: url('../assets/images/purpleSVG/best_overall_ux_cybersecurity_purple.svg');
+}
+
+.winner-card[data-category="data-visualization"]::before {
+  background-image: url('../assets/images/purpleSVG/best_use_of_data_visulaization_purple.svg');
+}
+
+.winner-card[data-category="intuitive-interface"]::before {
+  background-image: url('../assets/images/purpleSVG/most_intuitive_user_interface_purple.svg');
+}
+
+.winner-card[data-category="mobile-security"]::before {
+  background-image: url('../assets/images/purpleSVG/best_mobile_security_ux_purple.svg');
+}
+
+.winner-card[data-category="accessibility"]::before {
+  background-image: url('../assets/images/purpleSVG/most_accessibile_design_purple.svg');
+}
+
+/* All category banners use brand red */
+.winner-card .category-banner {
+  background: #FF6B35;
+}
+
+/* Grand Prize styling */
+.winner-card.grand-prize {
+  border: 2px solid #FFD700;
+}
+
+.winner-card.grand-prize .category-banner {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+/* Coming Soon Banner */
+.coming-soon-banner {
+  background: white;
+  border-radius: 16px;
+  padding: 80px 40px;
+  text-align: center;
+  margin: 60px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.countdown-wrapper h3 {
+  font-size: 36px;
+  color: #FF6B35;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.countdown-wrapper p {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Winners CTA */
+.winners-cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.winners-cta p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.winners-cta .cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 0 10px;
+  background: #FF6B35;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.winners-cta .cta-button:hover {
+  background: #E55A2B;
+  transform: translateY(-2px);
+}
+
+.winners-cta .cta-button.secondary {
+  background: #DC143C;
+  color: white;
+  border: 2px solid #DC143C;
+}
+
+.winners-cta .cta-button.secondary:hover {
+  background: #B91C3C;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .winners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .winners-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .winner-card {
+    min-height: 400px;
+  }
+  
+  .company-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .company-name {
+    font-size: 20px;
+  }
+  
+  .winner-label {
+    font-size: 16px;
+  }
+  
+  .award-logo {
+    width: 100px;
+  }
+  
+  .winners-cta .cta-button {
+    display: block;
+    margin: 10px auto;
+    max-width: 250px;
+  }
+}
