@@ -70,13 +70,6 @@ const initWhy = () => {
         <button class="cta-button nominate-cta-button" id="nominateBtn2026">
           Nominate for 2026
         </button>
-        <!-- HubSpot form will be inserted here when provided by client -->
-        <div id="nominateForm2026" style="display: none;">
-          <!-- Placeholder for HubSpot embed code -->
-          <div style="padding: 2rem; background: #f0f0f0; border-radius: 8px; margin-top: 2rem;">
-            <p>HubSpot 2026 nomination form will be embedded here</p>
-          </div>
-        </div>
       </div>
     </div>
   `;
@@ -84,15 +77,31 @@ const initWhy = () => {
   // Insert the why nominate content into the section
   whySection.innerHTML = whyContent;
   
-  // Add click handler for the nominate button
+  // Add click handler for the nominate button to open modal
   const nominateBtn = document.getElementById('nominateBtn2026');
   if (nominateBtn) {
     nominateBtn.addEventListener('click', () => {
-      const form = document.getElementById('nominateForm2026');
-      if (form) {
-        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+      const modal = document.querySelector('.nomination-modal-2026');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
       }
     });
+  }
+  
+  // Add close functionality for the 2026 modal
+  const modal2026 = document.querySelector('.nomination-modal-2026');
+  if (modal2026) {
+    const closeBtn = modal2026.querySelector('.modal-close');
+    const overlay = modal2026.querySelector('.modal-overlay');
+    
+    const closeModal = () => {
+      modal2026.classList.remove('active');
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    };
+    
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
   }
 };
 
