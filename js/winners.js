@@ -20,6 +20,18 @@ const initWinners = () => {
   
   // Insert the winners content into the section
   winnersSection.innerHTML = winnersContent;
+  
+  // Add click handler for the winners nominate button to open modal
+  const winnersNominateBtn = document.getElementById('winnersNominateBtn2026');
+  if (winnersNominateBtn) {
+    winnersNominateBtn.addEventListener('click', () => {
+      const modal = document.querySelector('.nomination-modal-2026');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      }
+    });
+  }
 };
 
 // Create coming soon content (before August 6)
@@ -147,6 +159,7 @@ const createWinnersContent = () => {
         </div>
         
         <!-- Best Accessibility & Inclusive UX -->
+        <!-- Commented out Dataminr card as requested
         <div class="winner-card accessibility" data-category="accessibility">
           <div class="card-top">
             <img src="assets/images/newuxcellenceorangeuseclean.svg" alt="Cyber UXcellence Awards" class="award-logo">
@@ -160,10 +173,11 @@ const createWinnersContent = () => {
             <div class="category-subtitle">INCLUSIVE UX</div>
           </div>
         </div>
+        -->
       </div>
       
       <div class="winners-cta">
-        <a href="#why-nominate" class="cta-button secondary">Nominate for 2026</a>
+        <button class="cta-button secondary" id="winnersNominateBtn2026">Nominate for 2026</button>
       </div>
     </div>
   `;
