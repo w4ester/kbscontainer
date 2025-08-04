@@ -6,6 +6,7 @@
 import { initCookieConsent } from './analytics.js';
 import initHero from './hero.js';
 import initWinners from './winners.js';
+import initCelebrationCarousel from './celebration-carousel.js';
 import initAbout from './about.js';
 import initCategories from './categories.js';
 import initWhy from './why.js';
@@ -326,6 +327,9 @@ const initSections = () => {
   
   // Initialize winners section (NEW)
   initWinners();
+  
+  // Initialize celebration carousel
+  initCelebrationCarousel();
   
   // Initialize about section
   initAbout();

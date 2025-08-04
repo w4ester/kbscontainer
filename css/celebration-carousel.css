@@ -1,0 +1,294 @@
+/**
+ * Cyber UXcellence Awards - Celebration Carousel Styles
+ */
+
+.celebration-carousel-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f8f8fc 0%, #f0f0f7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle dot pattern overlay */
+.celebration-carousel-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.carousel-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-header .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.carousel-header .section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Carousel Container */
+.carousel-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-wrapper {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Slides Container */
+.carousel-slides {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+/* Slide Image */
+.slide-image-wrapper {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient overlay for text readability */
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  pointer-events: none;
+}
+
+/* Slide Caption */
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  color: white;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.slide-caption p {
+  font-size: 1.125rem;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.carousel-nav:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-nav-prev {
+  left: 20px;
+}
+
+.carousel-nav-next {
+  right: 20px;
+}
+
+.carousel-nav svg {
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary);
+}
+
+/* Indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 0;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(99, 102, 241, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-indicator:hover {
+  background: rgba(99, 102, 241, 0.5);
+  transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+  background: var(--primary-color);
+  width: 24px;
+  border-radius: 5px;
+  animation: indicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .celebration-carousel-section {
+    padding: 60px 0;
+  }
+  
+  .carousel-header .section-title {
+    font-size: 2rem;
+  }
+  
+  .carousel-header .section-subtitle {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+  
+  .carousel-slides {
+    height: 400px;
+  }
+  
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-nav-prev {
+    left: 10px;
+  }
+  
+  .carousel-nav-next {
+    right: 10px;
+  }
+  
+  .carousel-nav svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .slide-caption {
+    padding: 1.5rem;
+  }
+  
+  .slide-caption p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-slides {
+    height: 300px;
+  }
+  
+  .slide-caption p {
+    font-size: 0.875rem;
+  }
+  
+  .carousel-indicators {
+    padding: 15px 0;
+  }
+  
+  .carousel-indicator {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .carousel-indicator.active {
+    width: 20px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide {
+    transition: none;
+  }
+  
+  .carousel-nav:hover {
+    transform: translateY(-50%);
+  }
+  
+  @keyframes indicatorPulse {
+    0%, 100% {
+      opacity: 1;
+    }
+  }
+}
